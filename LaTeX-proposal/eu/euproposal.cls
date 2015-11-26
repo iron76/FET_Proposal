@@ -39,10 +39,11 @@
 \end{tabular}}
 \renewenvironment{prop@proposal}
 {\thispagestyle{empty}\begin{center}
-  {\Large \prop@gen@instrument}\\[.2cm]
-  {\Large\textbf\prop@gen@callname}\\[.4cm]
-  {\LARGE \prop@gen@callid}\\[.8cm]
-  {\huge\textbf\prop@gen@title}\\[.4cm]
+  {\Large \prop@gen@callid}\\[.2cm]
+  {\Large\textbf\prop@gen@callname}\\[.8cm]
+  {\large\prop@gen@challengeid}\\[.2cm]
+  {\large\textbf\prop@gen@instrument}\\[.8cm]
+  {\huge\textbf\prop@gen@title}\\[.2cm]
   {\LARGE Acronym: {\prop@gen@acronym}}\\[2cm]
 \end{center}
 {\large\textbf{Date of Preparation: \today}}
