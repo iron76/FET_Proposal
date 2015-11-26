@@ -7,14 +7,19 @@
 
 \usepackage{float}  % used to suppress floating of tables in Resources section.
 \usetikzlibrary{calc,fit,positioning,shapes,arrows,snakes}
+\usepackage[normalem]{ulem}
 
 \addbibresource{kwarc.bib}
 \input{WApersons} % Some sections of the included files depend on this.
 \usepackage{comments}
 \usepackage{framed}
 
+% This is to reflect the EU template numbering scheme
+\renewcommand*\thesection{\arabic{section}}
 
 \begin{document}
+
+\phantom{ }
 
 \begin{proposal}[
   % These PM numbers (person months) are for the coordinator to help planning
@@ -23,27 +28,54 @@
   site=PAR1,
   site=PAR2,
   site=PAR3,
+  site=PAR4,
   botupPM, % we want to work via bottom up PM distribution,
   coordinator=PAR1P1,
   coordinatorsite=PAR1,
-  acronym={MyFETProject},
-  acrolong={MyFETProject},
-  title=My FET research project,
-  callname=Topic: FET-Open - Novel ideas for radically new technologies,
-  callid=H2020-FETOPEN-2014-2015-RIA,
+  acronym={My-Prj-Acr},
+  acrolong={My-Project-Acronym},
+  title=My H2020 research project,
+  callname=Call: Information and communication technologies,
+  callid=Call identifier: H2020-ICT-2016-2017,
   keywords={science, research, ideas},
-  instrument= Call: H2020-FETOPEN-2014-2015, %Call: H2020-EINFRA-2015-1, 3 Topic 9-2015
-  challengeid = TODO,
+  instrument=Topic: Advanced robot capabilities research and take-up,
+  challengeid =Challenge identifier: ICT-25-2016-2017,
   months=48,
   compactht]
 \newcommand{\TheProject}{\pn}% \pn is defined automatically
-\begin{abstract}
-  \TheProject is to do research.
 
-  All produced code and tools will be open source.
+\begin{center}
+Proposal template (technical annex)
+\end{center}
+\begin{center}
+Research and Innovation actions Innovation actions
+\end{center}
+
+Please follow the structure of this template when preparing your proposal. It has been designed to ensure that the important aspects of your planned work are presented in a way that will enable the experts to make an effective assessment against the evaluation criteria. Sections 1, 2 and 3 each correspond to an evaluation criterion for a full proposal.
+
+Please be aware that proposals will be evaluated as they were submitted, rather than on their potential if certain changes were to be made. This means that only proposals that successfully address all the required aspects will have a chance of being funded. There will be no possibility for significant changes to content, budget and consortium composition during grant preparation.
+
+\textbf{First stage proposals:} In two-stage submission schemes, at the first stage you only need to complete the parts indicated by a bracket (i.e. \}). These are in the cover page, and sections 1 and 2.
+
+\textbf{Page limit:} \uline{For full proposals, the cover page, and sections 1, 2 and 3, together should not be longer than 70 pages}. All tables in these sections must be included within this limit. The minimum font size allowed is 11 points. The page size is A4, and all margins (top, bottom, left, right) should be at least 15 mm (not including any footers or headers).
+
+\uline{The page limit for a first stage proposal is 10 pages.}
+The page limit will be applied automatically; therefore you must remove this instruction page before submitting.
+
+If you attempt to upload a proposal longer than the specified limit, before the deadline you will receive an automatic warning, and will be advised to shorten and re-upload the proposal. After the deadline, any excess pages will be overprinted with a 'watermark', indicating to evaluators that these pages must be disregarded.
+
+Please do not consider the page limit as a target! It is in your interest to keep your text as concise as possible, since experts rarely view unnecessarily long proposals in a positive light.
+
+\clearpage
+
+\begin{abstract}
+This was not in the EU community template ...
 \end{abstract}
+
+
 \ifsubmit\else\setcounter{tocdepth}{4}\fi
 \tableofcontents
+\clearpage
 
 \TOWRITE{PAR1P1}{Larger table of participants}
 \TOWRITE{PAR1P1}{Abstract in the first page?}
@@ -63,10 +95,8 @@
 %  Section 1: Excellence
 % ---------------------------------------------------------------------------
 
-\section{S\&T Excellence}
+\section{Excellence}
 \input{excellence.tex}
-
-\clearpage
 
 % ---------------------------------------------------------------------------
 %  Section 2: Impact
@@ -74,8 +104,6 @@
 
 \section{Impact}
 \input{impact.tex}
-
-\clearpage
 
 % ---------------------------------------------------------------------------
 %  Section 3: Implementation
@@ -85,7 +113,10 @@
 
 \input{implementation}
 
-\gantttaskchart[draft,xscale=.33,yscale=.33,milestones]
+\input{WorkPackages/WorkPackages}
+
+\clearpage
+\gantttaskchart[draft,xscale=.23,yscale=.33,milestones]
 
 \newpage
 \subsubsection{Deliverables}\label{sec:deliverables}
@@ -98,8 +129,6 @@
 % ---------------------------------------------------------------------------
 % Include Work package descriptions
 % ---------------------------------------------------------------------------
-
-\input{WorkPackages/WorkPackages}
 
 \newpage
 \subsection{Management Structure and Procedures}
