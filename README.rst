@@ -115,8 +115,7 @@ The package is in conflict with the eudata package which comes by default
 with latex. You will get a warning like:
 
 ```
-LaTeX Warning: You have requested package `eupdata',
-               but the package provides `eudata'.
+LaTeX Warning: You have requested package `eupdata', but the package provides `eudata'.
 ```
 
 and an error like:
