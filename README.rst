@@ -107,3 +107,24 @@ Bibliography
 If you need to add a bibTeX data base foo.bib, please commit it, and
 add a line \addbibresource{foo.bib} near the other ones at the top of
 proposal.tex. We are using biblatex.sty because it is more versatile.
+
+Notes
+-----
+
+The package is in conflict with the eudata package which comes by default 
+with latex. You will get a warning like:
+```
+LaTeX Warning: You have requested package `eupdata',
+               but the package provides `eudata'.
+```
+and an error like:
+```
+! Package keyval Error: botupPM undefined.
+```
+The solution is the one implemented in the Makefile consisting in defining 
+a proper `TEXINPUTS` environment variable:
+```
+export TEXINPUTS=.//:LaTeX-proposal/base//:LaTeX-proposal/eu//:LaTeX-proposal/etc//:
+```
+Alternatively you can copy the package directories `LaTeX-proposal` in a directory 
+where pdflatex is looking for .sty files. On macOs this can be located in `~/texmf/tex/latex`.
