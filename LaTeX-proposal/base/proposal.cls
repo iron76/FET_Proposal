@@ -398,15 +398,13 @@
 \@ifundefined{mile@stones}{\xdef\mile@stones{\mile@id}}{\xdef\mile@stones{\mile@stones,\mile@id}}%
 \@milestone{\mile@id}{#2}{#3}% presentation
 \else\deliv@error\fi}
-\newcommand\@milestone[3]{% id, title, description
-\item \textbf{Milestone \pdataref{mile}{#1}{label} (Month \pdataref{mile}\mile@id{month})
-\textbf{#2}} #3}
+\newcommand\@milestone[3]{}
 \newenvironment{milestones}%
 {\ifdelivs\begin{@milestones}\else\deliv@error\fi}
 {\ifdelivs\pdata@def{all}{mile}{ids}{\mile@stones}%
 \pdata@def{all}{mile}{count}{\themilestone}%
 \end{@milestones}\fi}
-\newenvironment{@milestones}{\begin{enumerate}}{\end{enumerate}}
+\newenvironment{@milestones}{}{}
 \newcommand\milestonetable{%
 {\gdef\mst@lines{}%initialize
 \let\tabularnewline\relax\let\hline\relax% so they
@@ -431,7 +429,7 @@
 &\textbf{\miles@legend@verif}\\\hline\hline
 \mst@lines
 \end{tabular}
-\caption{Milestones, Deliverables, and Verification}\label{tab:milestonetable}
+\caption*{Milestones, Deliverables, and Verification}\label{tab:milestonetable}
 \end{table}
 \footnotetext\miles@legend@footnote}
 \newcommand\miles@legend@name{Name}
@@ -583,7 +581,7 @@ ganttgray,.60/.60,.60,.60/0,0,.60/0,0,0,.40}
 {\end{tabular}\smallskip\\
 \wpfig@legend@RAM@expl
 \if@sites; \wpfig@legend@lead@expl\fi
-\@ifundefined{wpfig@label}{\caption{\wpfig@legend@caption}}{\caption{\wpfig@caption}}
+\@ifundefined{wpfig@label}{\caption*{\wpfig@legend@caption}}{\caption*{\wpfig@caption}}
 \@ifundefined{wpfig@label}{\label{fig:wplist}}{\label{\wpfig@label}}
 \end{center}\end{table}}
 \newcommand\wpfig@legend@wap{\textbf{\ifwork@areas{WA/P}\else{WP}\fi}}
@@ -953,7 +951,7 @@ ganttgray,.60/.60,.60,.60/0,0,.60/0,0,0,.40}
          \@action\@@task\@@line\wphase@start\wphase@len\wphase@force
       }}}% end all iterations
     \end{gantt}
-    \caption{\gantt@caption@main{} -- \emph{\gantt@footnote}}\label{fig:gantt}
+    \caption*{\gantt@caption@main{} -- \emph{\gantt@footnote}}\label{fig:gantt}
 \end{figure}}
 \newcommand\jpub{\textcolor{\prop@link@color}{\textbf{\Large{$\star$}}}}
 \newcommand\jpro{\textcolor{\prop@link@color}{\textbf{\Large{$\bullet$}}}}
